@@ -1,5 +1,13 @@
 {
   "devDependencies": {
     "typescript": "^5.2.2"
-  }
+  },
+  "name": "hidden-settlements",
+  "version": "1.0.0",
+  "description": "\"A game inspired by the board game Lost Cities\"",
+  "main": "index.ts",
+  "repository": "git@github.com:IanHollow/HiddenSettlements.git",
+  "author": "Ian Holloway <ian.m.holloway@gmail.com>",
+  "license": "GNU AGPL",
+  "private": true
 }
