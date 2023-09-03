@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Change to your target ECMAScript version
+    "module": "CommonJS", // Use the appropriate module system for your project
+    "outDir": "./dist", // Output directory for transpiled JavaScript files
+    "rootDir": "./src", // Source directory for TypeScript files
+    "strict": true, // Enable strict type checking
+    "esModuleInterop": true, // Enable using import/export with CommonJS modules
+    "forceConsistentCasingInFileNames": true, // Enforce consistent file casing
+    "resolveJsonModule": true, // Allow importing JSON files
+    "declaration": true, // Generate declaration files (.d.ts)
+    "sourceMap": true // Generate source maps for debugging
+  },
+  "include": ["src/**/*.ts"], // Specify the files to include in compilation
+  "exclude": ["node_modules"] // Specify the files or directories to exclude
+}
