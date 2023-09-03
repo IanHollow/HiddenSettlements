@@ -12,9 +12,9 @@ class Deck {
     constructor() {
         const suits = ["Red", "Green", "Blue", "White", "Yellow"];
         const ranks = [
-            "handShake",
-            "handShake",
-            "handShake",
+            "Handshake",
+            "Handshake",
+            "Handshake",
             "2",
             "3",
             "4",
@@ -59,3 +59,17 @@ class Deck {
         return this.cards.length;
     }
 }
+
+// Usage example:
+const deck = new Deck();
+deck.shuffle();
+
+console.log(`Deck size: ${deck.size()}`);
+
+const hand = deck.dealHand(5);
+console.log('Hand:');
+for (const card of hand) {
+    console.log(card.toString());
+}
+
+console.log(`Deck size after dealing: ${deck.size()}`);
