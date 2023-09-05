@@ -1,12 +1,12 @@
-import { Card } from "./card";
-import { Deck } from "./deck";
-import { FaceUpDiscard } from "./faceUpDiscard";
-import { PlayerCards } from "./playerCards";
+import { Card } from "../card/card";
+import { Deck } from "../deck/deck";
+import { Discard } from "../discard/discard";
+import { Player } from "../player/player";
 
-class GameBoard {
+class Board {
     private deck: Deck;
-    private discardPiles: FaceUpDiscard[] = [];
-    private playerHands: PlayerCards[] = [];
+    private discardPiles: Discard[] = [];
+    private playerHands: Player[] = [];
 
     constructor(private suits: string[], private ranks: string[]) {
 
@@ -15,12 +15,12 @@ class GameBoard {
 
         // Create discard piles
         for (let i = 0; i < this.suits.length; i++) {
-            this.discardPiles.push(new FaceUpDiscard(this.suits[i], false));
+            this.discardPiles.push(new Discard(this.suits[i], false));
         }
 
         // Create two player hands
         for (let i = 0; i < 2; i++) {
-            this.playerHands.push(new PlayerCards(this.suits));
+            this.playerHands.push(new Player(this.suits));
         }
     }
 
@@ -95,4 +95,4 @@ for (let i = 2; i < 11; i++) {
     ranks.push(i.toString());
 }
 
-const gameBoard = new GameBoard(suits, ranks);
+const gameBoard = new Board(suits, ranks);

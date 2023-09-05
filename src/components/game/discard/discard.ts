@@ -1,7 +1,7 @@
-import { Card } from "./card";
+import { Card } from "../card/card";
 
 // A face up discard pile which you can only view the top card
-export class FaceUpDiscard {
+export class Discard {
     private cards: Card[] = [];
 
     constructor(private suit: string, private scoring: boolean) {

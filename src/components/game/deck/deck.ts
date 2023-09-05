@@ -1,4 +1,4 @@
-import { Card } from "./card";
+import { Card } from "../card/card";
 
 export class Deck {
     private cards: Card[] = [];

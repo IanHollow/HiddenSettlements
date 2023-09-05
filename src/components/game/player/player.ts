@@ -1,16 +1,16 @@
-import { Card } from "./card";
-import { FaceUpDiscard } from "./faceUpDiscard";
+import { Card } from "../card/card";
+import { Discard } from "../discard/discard";
 
-export class PlayerCards {
+export class Player {
     private hand: Card[] = [];
-    private scoringColumns: FaceUpDiscard[] = [];
+    private scoringColumns: Discard[] = [];
 
     constructor(private suits: string[]) {
         this.hand = [];
 
         // Create scoring columns
         for (let i = 0; i < this.suits.length; i++) {
-            this.scoringColumns.push(new FaceUpDiscard(this.suits[i], true));
+            this.scoringColumns.push(new Discard(this.suits[i], true));
         }
     }
 
@@ -46,7 +46,7 @@ export class PlayerCards {
     }
 
     // Place a card in a discard pile or scoring column
-    placeCardInDiscardPile(cardIndex: number, discardPile: FaceUpDiscard): void {
+    placeCardInDiscardPile(cardIndex: number, discardPile: Discard): void {
         // Remove the card from the player's hand
         // removeCard will check if the cardIndex is acceptable
         let card = this.removeCard(cardIndex);
