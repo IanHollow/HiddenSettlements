@@ -1,7 +1,7 @@
-import { Card } from "../card/card";
-import { Deck } from "../deck/deck";
-import { Discard } from "../discard/discard";
-import { Player } from "../player/player";
+import { Card } from "./card";
+import { Deck } from "./deck";
+import { Discard } from "./discard";
+import { Player } from "./player";
 
 class Board {
     private deck: Deck;

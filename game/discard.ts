@@ -1,4 +1,4 @@
-import { Card } from "../card/card";
+import { Card } from "./card";
 
 // A face up discard pile which you can only view the top card
 export class Discard {

@@ -1,5 +1,5 @@
-import { Card } from "../card/card";
-import { Discard } from "../discard/discard";
+import { Card } from "./card";
+import { Discard } from "./discard";
 
 export class Player {
     private hand: Card[] = [];
