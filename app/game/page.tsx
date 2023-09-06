@@ -1,9 +1,9 @@
-import Image from "next/image";
+import CardComponent from "@/components/CardComponent";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Game</h1>
-    </div>
+    <main className="flex flex-col items-center justify-between p-24">
+      <CardComponent suit="Red" rank="5" />
+    </main>
   );
 }
