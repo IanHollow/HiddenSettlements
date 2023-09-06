@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Grenze_Gotisch } from "next/font/google";
 import { useState } from "react";
-import PopupMenu from "./PopupMenu";
+import PopupNav from "./PopupNav";
 
 const grenzeGotisch = Grenze_Gotisch({ subsets: ["latin"] });
 
@@ -51,7 +51,7 @@ export default function Header() {
             Play
           </Link>
         </div>
-        <PopupMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
+        <PopupNav isOpen={isOpen} onClose={() => setIsOpen(false)} />
       </nav>
     </header>
   );
