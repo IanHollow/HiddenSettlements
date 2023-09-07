@@ -17,7 +17,7 @@ export default function Header() {
     <header>
       <nav className="mx-8 mt-3 flex items-center justify-between">
         <Link
-          className={`text-4xl font-bold md:text-5xl lg:text-6xl ${grenzeGotisch.className}`}
+          className={`text-4xl font-bold md:text-5xl lg:text-7xl ${grenzeGotisch.className}`}
           href="/"
         >
           Hidden Settlements
