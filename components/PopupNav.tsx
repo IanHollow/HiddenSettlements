@@ -20,8 +20,8 @@ export default function PopupNav({
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M9.13318 7.76256L1.7519 0.381279L0.514465 1.61872L7.89575 9L0.514465 16.3813L1.7519 17.6187L9.13318 10.2374L16.5145 17.6187L17.7519 16.3813L10.3706 9L17.7519 1.61872L16.5145 0.381279L9.13318 7.76256Z"
                 fill="black"
               ></path>

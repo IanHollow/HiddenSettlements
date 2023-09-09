@@ -31,8 +31,8 @@ export default function Header() {
             fill="black"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M20.3732 0.125H0.373169V1.875H20.3732V0.125ZM20.3732 7.125H0.373169V8.875H20.3732V7.125ZM0.373169 14.125H20.3732V15.875H0.373169V14.125Z"
             ></path>
           </svg>
