@@ -1,16 +1,17 @@
 import { Card } from "./card";
 import { Discard } from "./discard";
+import { ScoringColumn } from "./scoringColumn";
 
 export class Player {
     private hand: Card[] = [];
-    private scoringColumns: Discard[] = [];
+    private scoringColumns: ScoringColumn[] = [];
 
-    constructor(private suits: string[]) {
+    constructor(suits: string[]) {
         this.hand = [];
 
         // Create scoring columns
-        for (let i = 0; i < this.suits.length; i++) {
-            this.scoringColumns.push(new Discard(this.suits[i], true));
+        for (let i = 0; i < suits.length; i++) {
+            this.scoringColumns.push(new ScoringColumn(suits[i]));
         }
     }
 
@@ -35,22 +36,26 @@ export class Player {
         return this.hand.splice(cardIndex, 1)[0];
     }
 
-    // Swap the positions of two cards in the player's hand
-    swapCardOrder(index1: number, index2: number): void {
-        if (index1 < 0 || index1 >= this.hand.length || index2 < 0 || index2 >= this.hand.length) {
-            throw new Error("Invalid indices for swapping cards.");
-        }
-
-        // swap the cards
-        [this.hand[index1], this.hand[index2]] = [this.hand[index2], this.hand[index1]]
+    // View all scoring columns
+    viewScoringColumns(): ScoringColumn[] {
+        return this.scoringColumns;
     }
 
-    // Place a card in a discard pile or scoring column
-    placeCardInDiscardPile(cardIndex: number, discardPile: Discard): void {
+    // Place a card in a discard pile
+    discardCard(cardIndex: number, discardPile: Discard): void {
         // Remove the card from the player's hand
         // removeCard will check if the cardIndex is acceptable
         let card = this.removeCard(cardIndex);
-        // Add the card to the specified discard pile
-        discardPile.addToTop(card);
+        // Add the card to the specified card pile
+        discardPile.addCard(card);
+    }
+
+    // Place a card in a scoring column
+    scoreCard(cardIndex: number, scoringColumnIndex: number): void {
+        // Remove the card from the player's hand
+        // removeCard will check if the cardIndex is acceptable
+        let card = this.removeCard(cardIndex);
+        // Add the card to the specified scoring column
+        this.scoringColumns[scoringColumnIndex].addCard(card);
     }
 }

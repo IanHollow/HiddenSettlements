@@ -10,6 +10,7 @@ export default function DiscardPile({
   rank?: string;
 }) {
   return empty ? (
+    // Discard Pile is empty
     <CardComponent>
       <div className="h-auto w-3/4">
         <svg
@@ -19,7 +20,8 @@ export default function DiscardPile({
           viewBox="0 0 24 24"
           fill="none"
           stroke="black"
-          stroke-width="0.5"
+          stroke-width="1"
+          strokeLinecap="round"
         >
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -27,6 +29,7 @@ export default function DiscardPile({
       </div>
     </CardComponent>
   ) : (
+    // Discard Pile is not empty
     <CardComponent suit={suit} rank={rank} />
   );
 }

@@ -1,26 +1,14 @@
 import { Card } from "./card";
 
-// A face up discard pile which you can only view the top card
+// Discard Pile that can only view top card
 export class Discard {
-    private cards: Card[] = [];
+    protected cards: Card[] = [];
 
-    constructor(private suit: string, private scoring: boolean) {
-        this.cards = [];
-    }
+    constructor(private suit: string) { }
 
     // Add a card to the top of the pile
-    addToTop(card: Card): void {
+    addCard(card: Card): void {
         this.cards.push(card);
-    }
-
-    // View alls cards in discard
-    viewDiscard(): Card[] {
-        // Check if this is a scoring discard
-        if (this.scoring === false) {
-            throw new Error('Only allowed to view top card in non-scoring discard');
-        }
-
-        return this.cards
     }
 
     // View the top card without removing it
