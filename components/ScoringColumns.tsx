@@ -36,14 +36,16 @@ export default function ScoringColumns({
   }, []);
 
   return (
-    <div className="flex items-baseline justify-center">
+    <div className="felx-row flex space-x-6">
       {scoringColumns.map((scoringCol: ScoringColumn, scoreIndex: number) => (
-        <div key={scoreIndex} className="">
+        <div
+          key={scoreIndex}
+          className="border-gray h-28 w-20 rounded-lg border md:h-[10.5rem] md:w-[7.5rem] md:text-2xl lg:h-56 lg:w-40"
+        >
           {scoringCol.viewAllCards().map((card: Card, cardIndex: number) => (
             // create a cascade of cards
             <div
               key={cardIndex}
-              className=""
               style={{
                 transform: `translateY(${cardIndex * -translateAmount}rem)`,
               }}
