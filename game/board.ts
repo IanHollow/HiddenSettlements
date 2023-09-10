@@ -11,7 +11,7 @@ export class Board {
 
     // Game can technically be played with more than 2 players but it's not recommended
     constructor(private suits: string[], private ranks: string[], private numberOfPlayers: number = 2) {
-
+        // Create deck
         this.deck = new Deck(this.suits, this.ranks);
         this.deck.shuffle();
 
@@ -59,5 +59,20 @@ export class Board {
         }
         // drawCard will check if the deck is empty
         this.players[playerIndex].addToHand(this.deck.drawCard());
+    }
+
+    // deal hand of cards to a player
+    dealHand(playerIndex: number, numCards: number = 8): void {
+        // check playerIndex
+        if (playerIndex < 0 || playerIndex > this.players.length - 1) {
+            throw new Error("Player not found.");
+        }
+        // drawHand will check if the deck is empty
+        const hand: Card[] = this.deck.dealHand(numCards);
+
+        // add each card to the player's hand
+        for (const card of hand) {
+            this.players[playerIndex].addToHand(card);
+        }
     }
 }
