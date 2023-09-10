@@ -11,6 +11,7 @@ export class Deck {
         }
     }
 
+    // draw a single card
     drawCard() {
         if (this.cards.length === 0) {
             throw new Error('The deck is empty');
@@ -18,6 +19,7 @@ export class Deck {
         return this.cards.pop() as Card;
     }
 
+    // draw a hand of cards
     dealHand(numCards: number): Card[] {
         const hand: Card[] = [];
         for (let i = 0; i < numCards; i++) {
