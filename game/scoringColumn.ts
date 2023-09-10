@@ -8,8 +8,8 @@ export class ScoringColumn extends Discard {
 
     }
 
-    // View alls cards in discard
-    viewDiscard(): Card[] {
+    // View alls cards in scoring column
+    viewAllCards(): Card[] {
         return this.cards;
     }
 }
