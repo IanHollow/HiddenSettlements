@@ -1,7 +1,7 @@
 import CardComponent from "./CardComponent";
 
 export default function DiscardPile({
-  empty = false,
+  empty = true,
   suit = "",
   rank = "",
 }: {
